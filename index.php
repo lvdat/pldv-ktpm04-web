@@ -7,6 +7,7 @@ if(isset($_GET['page'])) {
         $customTitle = 'Bình xét DVUT';
     }
 }
+
 require 'includes/header.php';
 
 if(!checkLogin()) {

@@ -8,7 +8,7 @@
     </div>
 </div>
 <script>
-    var count = 5;
+    var count = 3;
     var countdown = setInterval(function() {
         count--;
         if(count <= 0) {

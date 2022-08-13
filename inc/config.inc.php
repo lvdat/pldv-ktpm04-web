@@ -8,10 +8,10 @@ $config = array(
     'zalo' => $_ENV['ZALO'],
     'email' => $_ENV['EMAIL'],
     'xeploai' => array(
-        'Yếu Kém',
-        'Trung Bình',
-        'Khá',
-        'Xuất Sắc'    
+        'YẾU KÉM',
+        'TRUNG BÌNH',
+        'KHÁ',
+        'XUẤT SẮC'    
     ),
     'xeploai_color' => array(
         'red',

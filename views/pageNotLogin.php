@@ -9,3 +9,6 @@
         </div>
     </div>
 </div>
+<script>
+    document.title = '<?=$config['site_title']?>';
+</script>
