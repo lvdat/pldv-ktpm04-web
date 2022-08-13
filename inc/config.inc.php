@@ -1,2 +1,6 @@
 <?php
-define('SITE_TITLE', 'Trang đánh giá xếp loại đoàn viên Chi đoàn KTPM 04 Khóa 46');
+require_once 'functions.php';
+
+$config = array(
+    'site_title' => $_ENV['APP_TITLE']
+);

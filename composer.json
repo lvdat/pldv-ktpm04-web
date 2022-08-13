@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/dotenv": "^5.4",
+        "symfony/apache-pack": "^1.0"
+    }
+}
