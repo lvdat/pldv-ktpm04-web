@@ -1,6 +1,13 @@
 {
     "require": {
         "symfony/dotenv": "^5.4",
-        "symfony/apache-pack": "^1.0"
+        "symfony/apache-pack": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.24",
+        "shuchkin/simplexlsx": "^1.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     }
 }

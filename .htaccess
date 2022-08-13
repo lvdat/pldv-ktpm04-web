@@ -1,0 +1,7 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^dvut$ /?page=dvut
+RewriteRule ^login/([a-zA-Z0-9]+)$ /login.php?hash=$1
+RewriteRule ^logout$ /logout.php

@@ -1,4 +1,5 @@
 .env
-
+*.log
 vendor/
 node_modules/
+tools/csv/*

@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 4.2em;
+}
+
+#info_dv > tbody > tr, #info_dv > thead > tr {
+    text-align: center;
+}
+
+#indo_dv {
+    border: 1px solid #000!important;
+}
