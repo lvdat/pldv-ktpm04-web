@@ -27,7 +27,7 @@ if(checkLogin()) {
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <?php if(checkLogin()): ?>
           <li class="nav-item">
-            <a class="nav-link<?=$root=="main" ? " active": ""?>" href="/"><i class="fas fa-info-circle"></i> Thông tin ĐV</a>
+            <a class="nav-link<?=$root=="main" ? " active": ""?>" href="/"><i class="fas fa-info-circle"></i> Xếp loại Đoàn viên</a>
           </li>
           <li class="nav-item">
             <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i> Bình xét DVUT</a>

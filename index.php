@@ -1,6 +1,6 @@
 <?php
 $root = 'main';
-$customTitle = 'Thông tin ĐV';
+$customTitle = 'Thông tin xếp loại Đoàn viên';
 if(isset($_GET['page'])) {
     if($_GET['page'] == 'dvut') {
         $root = 'dvut';

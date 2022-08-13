@@ -19,4 +19,5 @@ $config = array(
         'purple',
         'green'
     ),
+    'statics' => getStatics()
 );

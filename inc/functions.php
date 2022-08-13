@@ -41,6 +41,12 @@ function getInfoUserByHash ($hash) {
     return $conn->query($sql)->fetch_assoc();
 }
 
+function getInfoUserByCode ($code) {
+    global $conn;
+    $sql = "SELECT * FROM users WHERE code = '$code'";
+    return $conn->query($sql)->fetch_assoc();
+}
+
 function checkUserExist ($hash) {
     global $conn;
     $sql = "SELECT * FROM users WHERE hash = '$hash'";
@@ -67,4 +73,63 @@ function checkLogin () {
         $sql = "SELECT * FROM users WHERE code = '$user' AND hash = '$hash'";
         return $conn->query($sql)->num_rows > 0;
     }
+}
+
+function getVoteData () {
+    global $conn;
+    $sql = "SELECT code, info FROM dvut";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
+function getAllVoteData ($code) {
+    global $conn;
+    $sql = "SELECT * FROM dvut WHERE code = '$code'";
+    return $conn->query($sql)->fetch_assoc();
+}
+
+function isVoted () {
+    return getInfoCurrentUser()['voted'] == 1;
+}
+
+function upVote ($code) {
+    global $conn;
+    $currentVote = getAllVoteData($code)['upvote'];
+    $newVote = $currentVote + 1;
+    $sql = "UPDATE dvut SET upvote = '$newVote' WHERE code = '$code'";
+    return $conn->query($sql);
+}
+
+function downVote ($code) {
+    global $conn;
+    $currentVote = getAllVoteData($code)['downvote'];
+    $newVote = $currentVote + 1;
+    $sql = "UPDATE dvut SET downvote = '$newVote' WHERE code = '$code'";
+    return $conn->query($sql);
+}
+
+function setVoted () {
+    global $conn;
+    $user = $_SESSION['user'];
+    $sql = "UPDATE users SET voted = '1' WHERE code = '$user'";
+    return $conn->query($sql);
+}
+
+function getStatics() {
+    global $conn;
+    $sql = "SELECT * FROM users";
+    $sql1 = "SELECT * FROM users WHERE voted = '1'";
+    $sql2 = "SELECT * FROM users WHERE xeploai = '1'";
+    $sql3 = "SELECT * FROM users WHERE xeploai = '2'";
+    $sql4 = "SELECT * FROM users WHERE xeploai = '3'";
+    $sql5 = "SELECT * FROM users WHERE xeploai = '4'";
+    $res = array(
+        'users' => $conn->query($sql)->num_rows,
+        'voted' => $conn->query($sql1)->num_rows,
+        'yeukem' => $conn->query($sql2)->num_rows,
+        'trungbinh' => $conn->query($sql3)->num_rows,
+        'kha' => $conn->query($sql4)->num_rows,
+        'xuatsac' => $conn->query($sql5)->num_rows
+    );
+
+    return $res;
 }
