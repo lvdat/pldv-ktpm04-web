@@ -65,12 +65,12 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio1" value="up" checked="checked" required />
-                                <label class="form-check-label text-success" for="inlineRadio1"><i class="fas fa-check-circle"></i> Đồng ý</label>
+                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio-<?=$value['code'] . '-' . $key?>" value="up" checked="checked" required />
+                                <label class="form-check-label text-success" style="cursor: pointer" for="inlineRadio-<?=$value['code'] . '-' . $key?>"><i class="fas fa-check-circle"></i> Đồng ý</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio2" value="down">
-                                <label class="form-check-label text-danger" for="inlineRadio2"><i class="fas fa-times-circle"></i> Không đồng ý</label>
+                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>" value="down">
+                                <label class="form-check-label text-danger" style="cursor: pointer" for="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>"><i class="fas fa-times-circle"></i> Không đồng ý</label>
                             </div>
                         </div>
                     </div>
