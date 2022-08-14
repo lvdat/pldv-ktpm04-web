@@ -133,3 +133,9 @@ function getStatics() {
 
     return $res;
 }
+
+function getAllUser () {
+    global $conn;
+    $sql = "SELECT * FROM users";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}

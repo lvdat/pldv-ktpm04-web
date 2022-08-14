@@ -17,6 +17,7 @@
                     <li>Hệ thống không ghi lại thông tin của người tham gia bình xét, xem qua mã nguồn <a href="https://github.com/lvdat/pldv-ktpm04-web" target="_blank">tại đây</a>.</li>
                     <li>Chỉ được bầu một lần</li>
                     <li>Nếu bạn nào không tham gia bình xét thì mặc định tất cả phiếu của bạn đó là <b>Không đồng ý</b></li>
+                    <li>Hạn chót bình xét đoàn viên ưu tú là <b>17h ngày 15/08</b></li>
                 </div>
             </div>
 
