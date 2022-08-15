@@ -19,5 +19,12 @@ $config = array(
         'purple',
         'green'
     ),
-    'statics' => getStatics()
+    'statics' => getStatics(),
+    'bch' => array(
+        'B2012255',
+        'B2012191',
+        'B2012227',
+        'B2012253',
+        'B2012208'
+    )
 );

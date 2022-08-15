@@ -32,6 +32,11 @@ if(checkLogin()) {
           <li class="nav-item">
             <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i> Bình xét DVUT</a>
           </li>
+          <?php if(in_array($render['code'], $config['bch'])): ?>
+            <li class="nav-item">
+              <a class="nav-link<?=$root=="unvoted" ? " active": ""?>" href="/unvoted"><i class="fas fa-exclamation"></i> Chưa bình xét DVUT</a>
+            </li>
+          <?php endif ?>
         <?php endif ?>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -45,7 +50,7 @@ if(checkLogin()) {
                   <i class="fas fa-user-circle"></i> Xin chào, <?=$render['name'] . ' ' . $render['code']?>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                  <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
               </ul>
             </li>
           <?php endif ?>

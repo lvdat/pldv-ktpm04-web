@@ -139,3 +139,14 @@ function getAllUser () {
     $sql = "SELECT * FROM users";
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
+
+function forbiden () {
+    http_response_code(403);
+    die('Bạn không có quyền xem trang này');
+}
+
+function getUnvoted () {
+    global $conn;
+    $sql = "SELECT code, name FROM users WHERE voted = '0'";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
