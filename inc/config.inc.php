@@ -26,5 +26,6 @@ $config = array(
         'B2012227',
         'B2012253',
         'B2012208'
-    )
+    ),
+    'isFinalResult' => $_ENV['IS_FINAL_RESULT'] == 'true',
 );

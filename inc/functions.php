@@ -118,17 +118,21 @@ function getStatics() {
     global $conn;
     $sql = "SELECT * FROM users";
     $sql1 = "SELECT * FROM users WHERE voted = '1'";
-    $sql2 = "SELECT * FROM users WHERE xeploai = '1'";
-    $sql3 = "SELECT * FROM users WHERE xeploai = '2'";
-    $sql4 = "SELECT * FROM users WHERE xeploai = '3'";
-    $sql5 = "SELECT * FROM users WHERE xeploai = '4'";
+    $sql2 = "SELECT * FROM users WHERE xeploai = '1' AND xeploaichinhthuc = false";
+    $sql3 = "SELECT * FROM users WHERE xeploai = '2' AND xeploaichinhthuc = false";
+    $sql4 = "SELECT * FROM users WHERE xeploai = '3' AND xeploaichinhthuc = false";
+    $sql5 = "SELECT * FROM users WHERE xeploai = '4' AND xeploaichinhthuc = false";
+    $sql6 = "SELECT * FROM users WHERE xeploaichinhthuc = '1'";
+    $sql7 = "SELECT * FROM users WHERE xeploaichinhthuc = '2'";
+    $sql8 = "SELECT * FROM users WHERE xeploaichinhthuc = '3'";
+    $sql9 = "SELECT * FROM users WHERE xeploaichinhthuc = '4'";
     $res = array(
         'users' => $conn->query($sql)->num_rows,
         'voted' => $conn->query($sql1)->num_rows,
-        'yeukem' => $conn->query($sql2)->num_rows,
-        'trungbinh' => $conn->query($sql3)->num_rows,
-        'kha' => $conn->query($sql4)->num_rows,
-        'xuatsac' => $conn->query($sql5)->num_rows
+        'yeukem' => $conn->query($sql2)->num_rows + $conn->query($sql6)->num_rows,
+        'trungbinh' => $conn->query($sql3)->num_rows + $conn->query($sql7)->num_rows,
+        'kha' => $conn->query($sql4)->num_rows + $conn->query($sql8)->num_rows,
+        'xuatsac' => $conn->query($sql5)->num_rows + $conn->query($sql9)->num_rows,
     );
 
     return $res;
