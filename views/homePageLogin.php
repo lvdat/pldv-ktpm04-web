@@ -35,14 +35,21 @@
                     </tr>
                     <tr>    
                         <td colspan="3"><b>KẾT QUẢ XẾP LOẠI TỪ ĐOÀN KHOA</b></td>
-                        <td style="color: red"><b>CHƯA CÓ</b></td>
+                        <?php if(!$config['isFinalResult']) : ?>
+                            <td style="color: red"><b>CHƯA CÓ</b></td>
+                        <?php else : ?>
+                            <?php if($render['xeploaichinhthuc'] == 0) : ?>
+                                <td style="color: <?=$config['xeploai_color'][$render['xeploai'] - 1]?>"><b><?=$config['xeploai'][$render['xeploai'] - 1]?></b></td>
+                            <?php else : ?>
+                                <td style="color: <?=$config['xeploai_color'][$render['xeploaichinhthuc'] - 1]?>"><b><?=$config['xeploai'][$render['xeploaichinhthuc'] - 1]?></b></td>
+                            <?php endif ?>
+                        <?php endif ?>    
                     </tr>
                 </tbody>
             </table>
             <div class="card mt-1">
                 <div class="card-body">
                     <b>Chú ý:</b> Điểm TB sẽ tính tất cả các học phần đã học, kể cả các học phần bị điểm F. Kết quả ở đây gần như đã là cuối cùng, nhưng bạn có quyền phản hồi nếu có sai sót, không đồng ý với kết quả.
-                    Hạn chót phản hồi kết quả trước 17h ngày 15/08.
                 </div>
             </div>
 

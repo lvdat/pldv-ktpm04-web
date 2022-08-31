@@ -28,4 +28,12 @@ $config = array(
         'B2012208'
     ),
     'isFinalResult' => $_ENV['IS_FINAL_RESULT'] == 'true',
+    'dvut_status' => array(
+        'Không đủ điều kiện',
+        'Đủ điều kiện',
+    ),
+    'dvut_color' => array(
+        'red',
+        'green',
+    )
 );

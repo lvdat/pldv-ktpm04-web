@@ -81,6 +81,12 @@ function getVoteData () {
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 
+function getVoteDataResult () {
+    global $conn;
+    $sql = "SELECT * FROM dvut";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
 function getAllVoteData ($code) {
     global $conn;
     $sql = "SELECT * FROM dvut WHERE code = '$code'";
