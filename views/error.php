@@ -5,7 +5,7 @@
                 <?php
                     switch ($error_code) {
                         case '404':
-                            echo 'Trang này không tồn tại.';
+                            echo 'Trang này không tồn tại. Vui lòng đảm bảo đường dẫn chính xác và thử lại';
                             break;
                         case '403':
                             echo 'Email không hợp lệ, vui lòng sử dụng Tài khoản Google Trường cấp và là sinh viên của lớp DI2096A4 để đăng nhập';

@@ -26,13 +26,14 @@ if (checkLogin()) {
         $google_oauth = new Google_Service_Oauth2($client);
         $google_account_info = $google_oauth->userinfo->get();
         $email =  $google_account_info->email;
-        var_dump($google_account_info);
+        // var_dump($google_account_info);
         
         if (!checkUserExistByEmail($email)) {
-            $error_code = '403';
-            require_once 'views/error.php';
+            Redirect('/auth_error');
         } else {
-            // OK!
+            $hash = getInfoUserByEmail($email)['hash'];
+           //  echo 'Email hợp lệ, hash: ' . $hash;
+            Redirect('/login' . '/' . $hash); // redirect to old login method (use hash)
         }
 
     } else {

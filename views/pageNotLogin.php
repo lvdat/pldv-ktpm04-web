@@ -2,13 +2,15 @@
     <div class="card">
         <div class="card-body text-center">
             <p>
-                Bạn chưa đăng nhập. Vui lòng click vào liên kết trong email để tự động đăng nhập vào hệ thống. <br />
-                Nếu không nhận được mail, vui lòng kiểm tra thư mục spam, mọi chi tiết liên hệ qua: <br />
-                Email: <a href="mailto:<?=$config['email']?>"><?=$config['email']?></a> | Zalo: <a target="_blank" href="https://zalo.me/<?=$config['zalo']?>"><?=$config['zalo']?></a>
+                Bạn chưa đăng nhập. Vui lòng click vào nút bên dưới để tự động đăng nhập với tài khoản Google Trường
+                cấp.
+            </p>
+            <p>
+                <a class="btn btn-danger btn-lg" href="/google"><i class="fab fa-google"></i> Đăng nhập với Google!</a>
             </p>
         </div>
     </div>
 </div>
 <script>
-    document.title = '<?=$config['site_title']?>';
+document.title = '<?=$config['site_title']?>';
 </script>

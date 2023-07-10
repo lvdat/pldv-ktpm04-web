@@ -1,4 +1,4 @@
-ErrorDocument 404 /404/
+ErrorDocument 404 /error/404
 
 Options +FollowSymLinks -MultiViews
 Options -Indexes
@@ -6,6 +6,7 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule ^error/([0-9]+)$ /?page=error&code=$1
+RewriteRule ^auth_error$ /?page=error&code=403
 RewriteRule ^dvut$ /?page=dvut
 RewriteRule ^unvoted$ /?page=unvoted
 RewriteRule ^login/([a-zA-Z0-9]+)$ /login.php?hash=$1
