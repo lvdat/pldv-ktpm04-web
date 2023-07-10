@@ -176,3 +176,10 @@ function Redirect ($url, $permanent = false) {
     header('Location: ' . $url, true, $permanent ? 301 : 302);
     exit();
 }
+
+function updateHash ($code) {
+    global $conn;
+    $newHash = str_random(100);
+    $sql = "UPDATE users SET hash = '$newHash' WHERE code = '$code'";
+    return $conn->query($sql);
+}

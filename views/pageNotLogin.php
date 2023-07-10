@@ -6,11 +6,16 @@
                 cấp.
             </p>
             <p>
-                <a class="btn btn-danger btn-lg" href="/google"><i class="fab fa-google"></i> Đăng nhập với Google!</a>
+                <a class="btn btn-danger btn-lg" onclick="goLogin()"><i class="fab fa-google"></i> Đăng nhập với
+                    Google!</a>
             </p>
         </div>
     </div>
 </div>
 <script>
 document.title = '<?=$config['site_title']?>';
+
+function goLogin() {
+    window.location.href = '/google';
+}
 </script>
