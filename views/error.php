@@ -8,7 +8,7 @@
                             echo 'Trang này không tồn tại.';
                             break;
                         case '403':
-                            echo 'Email không hợp lệ, vui lòng sử dụng Tài khoản Google Trường cấp để đăng nhập';
+                            echo 'Email không hợp lệ, vui lòng sử dụng Tài khoản Google Trường cấp và là sinh viên của lớp DI2096A4 để đăng nhập';
                             break;
                         default:
                             echo 'Lỗi hệ thống.';
