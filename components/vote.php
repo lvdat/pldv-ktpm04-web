@@ -3,6 +3,10 @@ md-block {
     /* white-space: pre; */
     font-family: monospace;
 }
+
+.card-body.dv_info {
+    padding-bottom: unset;
+}
 </style>
 <p>
     Dưới đây là kết quả học tập và thành tích tiêu biểu của các bạn đã đủ điều kiện và mong muốn trở thành Đoàn viên ưu
@@ -72,7 +76,7 @@ md-block {
                     </table>
                     <p><b>Thành tích tiêu biểu</b></p>
                     <div class="card mb-2">
-                        <div class="card-body">
+                        <div class="card-body dv_info">
                             <md-block>
                                 <?=$value['info']?>
                             </md-block>
@@ -86,14 +90,18 @@ md-block {
                                     required />
                                 <label class="form-check-label text-success" style="cursor: pointer"
                                     for="inlineRadio-<?=$value['code'] . '-' . $key?>"><i
-                                        class="fas fa-check-circle"></i> Đồng ý</label>
+                                        class="fas fa-check-circle"></i> Đồng ý
+                                    <span class="badge bg-success rounded-pill"><?=$value['upvote']?></span>
+                                </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="<?=$value['code']?>"
                                     id="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>" value="down">
                                 <label class="form-check-label text-danger" style="cursor: pointer"
                                     for="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>"><i
-                                        class="fas fa-times-circle"></i> Không đồng ý</label>
+                                        class="fas fa-times-circle"></i> Không đồng ý
+                                    <span class="badge bg-danger rounded-pill"><?=$value['downvote']?></span>
+                                </label>
                             </div>
                         </div>
                     </div>

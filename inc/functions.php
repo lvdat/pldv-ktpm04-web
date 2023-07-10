@@ -89,7 +89,7 @@ function checkLogin () {
 
 function getVoteData () {
     global $conn;
-    $sql = "SELECT code, info FROM dvut";
+    $sql = "SELECT code, info, upvote, downvote FROM dvut";
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 
@@ -155,7 +155,6 @@ function getStatics() {
 
     return $res;
 }
-
 function getAllUser () {
     global $conn;
     $sql = "SELECT * FROM users";
