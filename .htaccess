@@ -7,3 +7,4 @@ RewriteRule ^dvut$ /?page=dvut
 RewriteRule ^unvoted$ /?page=unvoted
 RewriteRule ^login/([a-zA-Z0-9]+)$ /login.php?hash=$1
 RewriteRule ^logout$ /logout.php
+RewriteRule ^google$ /google.php

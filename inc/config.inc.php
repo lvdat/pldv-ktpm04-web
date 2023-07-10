@@ -35,5 +35,8 @@ $config = array(
     'dvut_color' => array(
         'red',
         'green',
-    )
+    ),
+    'google_client_id' => $_ENV['GOOGLE_CLIENT_ID'],
+    'google_client_secret' => $_ENV['GOOGLE_CLIENT_SECRET'],
+    'google_redirect_url' => $_ENV['GOOGLE_REDIRECT_URI']
 );
