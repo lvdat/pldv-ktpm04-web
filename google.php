@@ -1,5 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/inc/load.php';
+// require $_SERVER['DOCUMENT_ROOT'] . '/inc/load.php';
+require 'includes/header.php';
 
 // check login before start
 if (checkLogin()) {
@@ -25,12 +26,18 @@ if (checkLogin()) {
         $google_oauth = new Google_Service_Oauth2($client);
         $google_account_info = $google_oauth->userinfo->get();
         $email =  $google_account_info->email;
-        $name =  $google_account_info->name;
         var_dump($google_account_info);
-        // now you can use this profile info to create account in your website and make user logged in. 
+        
+        if (!checkUserExistByEmail($email)) {
+            $error_code = '403';
+            require_once 'views/error.php';
+        } else {
+            // OK!
+        }
+
     } else {
         $login_url = $client->createAuthUrl();
-        
+        Redirect($login_url);
     }
 }
 

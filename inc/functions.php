@@ -59,6 +59,12 @@ function checkUserExistByEmail ($email) {
     return $conn->query($sql)->num_rows > 0;
 }
 
+function getInfoUserByEmail ($email) {
+    global $conn;
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    return $conn->query($sql)->fetch_assoc();
+}
+
 function checkLogin () {
     if((!isset($_SESSION['user']) && !isset($_COOKIE['hash'])) || !isset($_COOKIE['hash'])) {
         return false;
