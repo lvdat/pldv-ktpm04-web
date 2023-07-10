@@ -1,5 +1,12 @@
+<style>
+md-block {
+    /* white-space: pre; */
+    font-family: monospace;
+}
+</style>
 <p>
-    Dưới đây là kết quả học tập và thành tích tiêu biểu của các bạn đã đủ điều kiện và mong muốn trở thành Đoàn viên ưu tú.
+    Dưới đây là kết quả học tập và thành tích tiêu biểu của các bạn đã đủ điều kiện và mong muốn trở thành Đoàn viên ưu
+    tú.
     Hãy click vào từng tên, xem chi tiết điểm và thành tích, sau đó click chọn Đồng ý hoặc Không đồng ý để bình bầu.
 </p>
 <?php 
@@ -25,15 +32,18 @@
 <form action="/dvut" method="POST" class="mb-3">
     <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
 
-    <?php foreach($a as $key => $value): ?>
-    <?php $userData = getInfoUserByCode($value['code']); ?> 
+        <?php foreach($a as $key => $value): ?>
+        <?php $userData = getInfoUserByCode($value['code']); ?>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-heading<?=$key?>">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse<?=$key?>" aria-expanded="false" aria-controls="panelsStayOpen-collapse<?=$key?>">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapse<?=$key?>" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapse<?=$key?>">
                     <?=$value['code'] . ' - ' .$userData['name']?>
                 </button>
             </h2>
-            <div id="panelsStayOpen-collapse<?=$key?>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading<?=$key?>">
+            <div id="panelsStayOpen-collapse<?=$key?>" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-heading<?=$key?>">
                 <div class="accordion-body">
                     <p><b>Kết quả học tập</b></p>
                     <table class="table table-hover table-responsive" id="info_dv">
@@ -63,18 +73,27 @@
                     <p><b>Thành tích tiêu biểu</b></p>
                     <div class="card mb-2">
                         <div class="card-body">
-                            <?=$value['info']?>
+                            <md-block>
+                                <?=$value['info']?>
+                            </md-block>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body text-center">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio-<?=$value['code'] . '-' . $key?>" value="up" checked="checked" required />
-                                <label class="form-check-label text-success" style="cursor: pointer" for="inlineRadio-<?=$value['code'] . '-' . $key?>"><i class="fas fa-check-circle"></i> Đồng ý</label>
+                                <input class="form-check-input" type="radio" name="<?=$value['code']?>"
+                                    id="inlineRadio-<?=$value['code'] . '-' . $key?>" value="up" checked="checked"
+                                    required />
+                                <label class="form-check-label text-success" style="cursor: pointer"
+                                    for="inlineRadio-<?=$value['code'] . '-' . $key?>"><i
+                                        class="fas fa-check-circle"></i> Đồng ý</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="<?=$value['code']?>" id="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>" value="down">
-                                <label class="form-check-label text-danger" style="cursor: pointer" for="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>"><i class="fas fa-times-circle"></i> Không đồng ý</label>
+                                <input class="form-check-input" type="radio" name="<?=$value['code']?>"
+                                    id="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>" value="down">
+                                <label class="form-check-label text-danger" style="cursor: pointer"
+                                    for="inlineRadio-<?=$value['code'] . '-' . ($key + 1)?>"><i
+                                        class="fas fa-times-circle"></i> Không đồng ý</label>
                             </div>
                         </div>
                     </div>
@@ -82,7 +101,7 @@
                 </div>
             </div>
         </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
     </div>
 
     <div class="text-center">
@@ -92,10 +111,10 @@
     </div>
 </form>
 <?php else : ?>
-    <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Done!</h4>
-        <p>Cảm ơn bạn đã tham gia bình xét Đoàn viên ưu tú!</p>
-        <hr>
-        <small>Nếu bạn muốn thay đổi lựa chọn, vui lòng liên hệ BCH để reset lượt bầu của bạn.</small>
-    </div>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Done!</h4>
+    <p>Cảm ơn bạn đã tham gia bình xét Đoàn viên ưu tú!</p>
+    <hr>
+    <small>Nếu bạn muốn thay đổi lựa chọn, vui lòng liên hệ BCH để reset lượt bầu của bạn.</small>
+</div>
 <?php endif ?>
