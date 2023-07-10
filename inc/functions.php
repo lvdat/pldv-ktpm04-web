@@ -166,3 +166,8 @@ function getUnvoted () {
     $sql = "SELECT code, name FROM users WHERE voted = '0'";
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
+
+function Redirect ($url, $permanent = false) {
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+    exit();
+}
