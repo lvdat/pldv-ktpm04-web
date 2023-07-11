@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <p class="text-center">
-                Dưới đây là kết quả học tập và kết quả xếp loại Đoàn viên của bạn dựa trên quy định của Đoàn Khoa.
+                Dưới đây là kết quả học tập và kết quả xếp loại Đoàn viên của bạn dựa trên quy định của Đoàn Trường.
             </p>
             <table class="table table-hover table-responsive" id="info_dv">
                 <thead>
@@ -31,25 +31,32 @@
                     </tr>
                     <tr>
                         <td colspan="3"><b>KẾT QUẢ XẾP LOẠI ĐOÀN VIÊN TẠM THỜI</b></td>
-                        <td style="color: <?=$config['xeploai_color'][$render['xeploai'] - 1]?>"><b><?=$config['xeploai'][$render['xeploai'] - 1]?></b></td>
+                        <td style="color: <?=$config['xeploai_color'][$render['xeploai'] - 1]?>">
+                            <b><?=$config['xeploai'][$render['xeploai'] - 1]?></b>
+                        </td>
                     </tr>
-                    <tr>    
-                        <td colspan="3"><b>KẾT QUẢ XẾP LOẠI TỪ ĐOÀN KHOA</b></td>
+                    <tr>
+                        <td colspan="3"><b>KẾT QUẢ XẾP LOẠI TỪ ĐOÀN TRƯỜNG</b></td>
                         <?php if(!$config['isFinalResult']) : ?>
-                            <td style="color: red"><b>CHƯA CÓ</b></td>
+                        <td style="color: red"><b>CHƯA CÓ</b></td>
                         <?php else : ?>
-                            <?php if($render['xeploaichinhthuc'] == 0) : ?>
-                                <td style="color: <?=$config['xeploai_color'][$render['xeploai'] - 1]?>"><b><?=$config['xeploai'][$render['xeploai'] - 1]?></b></td>
-                            <?php else : ?>
-                                <td style="color: <?=$config['xeploai_color'][$render['xeploaichinhthuc'] - 1]?>"><b><?=$config['xeploai'][$render['xeploaichinhthuc'] - 1]?></b></td>
-                            <?php endif ?>
-                        <?php endif ?>    
+                        <?php if($render['xeploaichinhthuc'] == 0) : ?>
+                        <td style="color: <?=$config['xeploai_color'][$render['xeploai'] - 1]?>">
+                            <b><?=$config['xeploai'][$render['xeploai'] - 1]?></b>
+                        </td>
+                        <?php else : ?>
+                        <td style="color: <?=$config['xeploai_color'][$render['xeploaichinhthuc'] - 1]?>">
+                            <b><?=$config['xeploai'][$render['xeploaichinhthuc'] - 1]?></b>
+                        </td>
+                        <?php endif ?>
+                        <?php endif ?>
                     </tr>
                 </tbody>
             </table>
             <div class="card mt-1">
                 <div class="card-body">
-                    <b>Chú ý:</b> Điểm TB sẽ tính tất cả các học phần đã học, kể cả các học phần bị điểm F. Kết quả ở đây gần như đã là cuối cùng, nhưng bạn có quyền phản hồi nếu có sai sót, không đồng ý với kết quả.
+                    <b>Chú ý:</b> Điểm TB sẽ tính tất cả các học phần đã học, kể cả các học phần bị điểm F. Kết quả ở
+                    đây gần như đã là cuối cùng, nhưng bạn có quyền phản hồi nếu có sai sót, không đồng ý với kết quả.
                 </div>
             </div>
 

@@ -12,6 +12,7 @@ md-block {
     Dưới đây là kết quả học tập và thành tích tiêu biểu của các bạn đã đủ điều kiện và mong muốn trở thành Đoàn viên ưu
     tú.
     Hãy click vào từng tên, xem chi tiết điểm và thành tích, sau đó click chọn Đồng ý hoặc Không đồng ý để bình bầu.
+    Có <b class="text-success"><?=$config['statics']['voted']?></b> Đoàn viên đã bình xét!
 </p>
 <?php 
     $a = getVoteData();

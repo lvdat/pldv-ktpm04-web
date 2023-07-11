@@ -4,7 +4,7 @@
             <th scope="col" style="width:20%">MSSV</th>
             <th scope="col" style="width:30%">Họ và tên</th>
             <th scope="col" style="width:20%">Đồng ý</th>
-            <th scope="col" style="width:30%">Kết quả từ ĐK</th>
+            <th scope="col" style="width:30%">Kết quả từ ĐT</th>
         </tr>
     </thead>
     <tbody>
