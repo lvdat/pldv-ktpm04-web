@@ -29,11 +29,12 @@ $config = array(
     ),
     'isFinalResult' => $_ENV['IS_FINAL_RESULT'] == 'true',
     'dvut_status' => array(
+        'Đang xét duyệt',
         'Không đủ điều kiện',
         'Đủ điều kiện',
-        'Đang xét duyệt',
     ),
     'dvut_color' => array(
+        'orange',
         'red',
         'green',
     ),

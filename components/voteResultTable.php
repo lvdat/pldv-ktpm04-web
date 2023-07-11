@@ -3,7 +3,7 @@
         <tr class="table-dark">
             <th scope="col" style="width:20%">MSSV</th>
             <th scope="col" style="width:30%">Họ và tên</th>
-            <th scope="col" style="width:20%">Tỉ lệ Đồng ý</th>
+            <th scope="col" style="width:20%">Đồng ý</th>
             <th scope="col" style="width:30%">Kết quả từ ĐK</th>
         </tr>
     </thead>
@@ -16,7 +16,9 @@
         <tr>
             <td><?=$value['code']?></td>
             <td><?=$userData['name']?></td>
-            <td><?=$value['upvote'] . '/' . $config['statics']['voted']?></td>
+            <td><span class="badge bg-success rounded-pill"><?=$value['upvote'] . '/' . $config['statics']['voted']?>
+                    (<?=round($value['upvote']/$config['statics']['voted']*100, 1)?>%) </span>
+            </td>
             <td><b
                     style="color: <?=$config['dvut_color'][$value['approved']]?>"><?=$config['dvut_status'][$value['approved']]?></b>
             </td>
