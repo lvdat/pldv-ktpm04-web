@@ -125,4 +125,7 @@ md-block {
     <hr>
     <small>Nếu bạn muốn thay đổi lựa chọn, vui lòng liên hệ BCH để reset lượt bầu của bạn.</small>
 </div>
+
+<?php require 'voteResultTable.php' ?>
+
 <?php endif ?>
