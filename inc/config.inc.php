@@ -31,6 +31,7 @@ $config = array(
     'dvut_status' => array(
         'Không đủ điều kiện',
         'Đủ điều kiện',
+        'Đang xét duyệt',
     ),
     'dvut_color' => array(
         'red',
