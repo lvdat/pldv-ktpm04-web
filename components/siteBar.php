@@ -1,6 +1,6 @@
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fas fa-chart-line"></i> Thống kê <?php if(!$config['isFinalResult']) ?><b class="text-danger">(Chưa chính thức)</b><?php endif ?>
+        <i class="fas fa-chart-line"></i> Thống kê <?php if(!$config['isFinalResult']): ?><b class="text-danger">(Chưa chính thức)</b><?php endif ?>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between align-items-center">
