@@ -38,6 +38,23 @@ $config = array(
         'red',
         'green',
     ),
+    'bch_vote_status' => array (
+        'Đang bầu',
+        'Trúng cử',
+        'Tái cử',
+        'Không trúng cử'
+    ),
+    'old_position' => array (
+        'Bí thư',
+        'Phó Bí thư',
+        'Uỷ viên'
+    ),
+    'bch_vote_color' => array(
+        'orange',
+        'green',
+        'green',
+        'red',
+    ),
     'google_client_id' => $_ENV['GOOGLE_CLIENT_ID'],
     'google_client_secret' => $_ENV['GOOGLE_CLIENT_SECRET'],
     'google_redirect_url' => $_ENV['GOOGLE_REDIRECT_URI']

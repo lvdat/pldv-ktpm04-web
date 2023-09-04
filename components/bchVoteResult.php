@@ -1,5 +1,5 @@
 <p>
-    Dưới đây là kết quả phản hồi về việc bình xét Đoàn viên Ưu tú của Đoàn Trường.
+    Dưới đây là kết quả bầu chọn Ban chấp hành Chi đoàn.
 </p>
 
 <?php require 'bchVoteResultTable.php' ?>
