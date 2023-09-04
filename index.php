@@ -23,7 +23,8 @@ if ($root == 'error') {
         require 'views/pageNotLogin.php';
         } else {
             if($root == 'main') {
-                require 'views/homePageLogin.php';
+                // require 'views/bchVote.php';
+                Redirect ('/votebch');
             } else if($root == 'dvut') {
                 require 'views/dvutPage.php';
             } else if($root == 'unvoted') {

@@ -34,7 +34,7 @@ md-block {
     }
 ?>
 <?php if(!isBCHVoted()) : ?>
-<form action="/dvut" method="POST" class="mb-3">
+<form action="/votebch" method="POST" class="mb-3">
     <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
 
         <?php foreach($a as $key => $value): ?>
@@ -102,11 +102,11 @@ md-block {
 <?php else : ?>
 <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">Done!</h4>
-    <p>Cảm ơn bạn đã tham gia bình xét Đoàn viên ưu tú!</p>
+    <p>Cảm ơn bạn đã tham gia bầu chọn Ban chấp hành nhiệm kỳ mới!</p>
     <hr>
-    <small>Nếu bạn muốn thay đổi lựa chọn, vui lòng liên hệ BCH để reset lượt bầu của bạn.</small>
+    <small>Mỗi Đoàn viên sẽ chỉ bầu được <b>1</b> lần và không thể sửa đổi lựa chọn.</small>
 </div>
 
-<?php require 'voteResultTable.php' ?>
+<?php require 'bchVoteResultTable.php' ?>
 
 <?php endif ?>

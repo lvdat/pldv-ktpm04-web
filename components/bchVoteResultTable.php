@@ -3,24 +3,25 @@
         <tr class="table-dark">
             <th scope="col" style="width:20%">MSSV</th>
             <th scope="col" style="width:30%">Họ và tên</th>
-            <th scope="col" style="width:20%">Đồng ý</th>
-            <th scope="col" style="width:30%">Kết quả từ ĐT</th>
+            <th scope="col" style="width:30%">Đồng ý</th>
+            <th scope="col" style="width:20%">Kết quả</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $a = getVoteDataResult();
+        $a = getBCHVoteDataResult();
         foreach($a as $key => $value):
             $userData = getInfoUserByCode($value['code']);
     ?>
         <tr>
             <td><?=$value['code']?></td>
             <td><?=$userData['name']?></td>
-            <td><span class="badge bg-success rounded-pill"><?=$value['upvote'] . '/' . $config['statics']['voted']?>
-                    (<?=round($value['upvote']/$config['statics']['voted']*100, 1)?>%) </span>
+            <td><span
+                    class="badge bg-success rounded-pill"><?=$value['upvote'] . '/' . $config['statics']['bch_voted']?>
+                    (<?=round($value['upvote']/$config['statics']['bch_voted']*100, 1)?>%) </span>
             </td>
             <td><b
-                    style="color: <?=$config['dvut_color'][$value['approved']]?>"><?=$config['dvut_status'][$value['approved']]?></b>
+                    style="color: <?=$config['bch_vote_color'][$value['status']]?>"><?=$config['bch_vote_status'][$value['status']]?></b>
             </td>
         </tr>
         <?php endforeach; ?>
