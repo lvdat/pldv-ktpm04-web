@@ -25,8 +25,7 @@ if(checkLogin()) {
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><b><i class="fas fa-university"></i> KTPM04</b> <sup><small>XLDV
-                        2023</small></sup></a>
+            <a class="navbar-brand" href="/"><b><i class="fas fa-university"></i> KTPM04</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,6 +33,7 @@ if(checkLogin()) {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if(checkLogin()): ?>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="main" ? " active": ""?>" href="/"><i
                                 class="fas fa-info-circle"></i> Xếp loại Đoàn viên</a>
@@ -42,11 +42,19 @@ if(checkLogin()) {
                         <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i>
                             Bình xét DVUT</a>
                     </li>
+                    -->
+                    <li class="nav-item">
+                        <a class="nav-link<?=$root=="votebch" ? " active": ""?>" href="/votebch"><i
+                                class="fas fa-poll"></i>
+                            Bầu BCH</a>
+                    </li>
                     <?php if(in_array($render['code'], $config['bch'])): ?>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="unvoted" ? " active": ""?>" href="/unvoted"><i
                                 class="fas fa-exclamation"></i> Chưa bình xét DVUT</a>
                     </li>
+                    -->
                     <?php endif ?>
                     <?php endif ?>
                 </ul>
