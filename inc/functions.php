@@ -93,9 +93,21 @@ function getVoteData () {
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 
+function getBCHVoteData () {
+    global $conn;
+    $sql = "SELECT code, info, upvote, downvote, old_position, status FROM dvut";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
 function getVoteDataResult () {
     global $conn;
     $sql = "SELECT * FROM dvut";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
+function getBCHVoteDataResult () {
+    global $conn;
+    $sql = "SELECT * FROM vote_bch";
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 
@@ -105,8 +117,18 @@ function getAllVoteData ($code) {
     return $conn->query($sql)->fetch_assoc();
 }
 
+function getAllBCHVoteData ($code) {
+    global $conn;
+    $sql = "SELECT * FROM vote_bch WHERE code = '$code'";
+    return $conn->query($sql)->fetch_assoc();
+}
+
 function isVoted () {
     return getInfoCurrentUser()['voted'] == 1;
+}
+
+function isBCHVoted () {
+    return getInfoCurrentUser()['bch_voted'] == 1;
 }
 
 function upVote ($code) {
@@ -114,6 +136,14 @@ function upVote ($code) {
     $currentVote = getAllVoteData($code)['upvote'];
     $newVote = $currentVote + 1;
     $sql = "UPDATE dvut SET upvote = '$newVote' WHERE code = '$code'";
+    return $conn->query($sql);
+}
+
+function upVoteBCH ($code) {
+    global $conn;
+    $currentVote = getAllBCHVoteData($code)['upvote'];
+    $newVote = $currentVote + 1;
+    $sql = "UPDATE vote_bch SET upvote = '$newVote' WHERE code = '$code'";
     return $conn->query($sql);
 }
 
@@ -125,10 +155,25 @@ function downVote ($code) {
     return $conn->query($sql);
 }
 
+function downVoteBCH ($code) {
+    global $conn;
+    $currentVote = getAllBCHVoteData($code)['downvote'];
+    $newVote = $currentVote + 1;
+    $sql = "UPDATE vote_bch SET downvote = '$newVote' WHERE code = '$code'";
+    return $conn->query($sql);
+}
+
 function setVoted () {
     global $conn;
     $user = $_SESSION['user'];
     $sql = "UPDATE users SET voted = '1' WHERE code = '$user'";
+    return $conn->query($sql);
+}
+
+function setVotedBCH () {
+    global $conn;
+    $user = $_SESSION['user'];
+    $sql = "UPDATE users SET bch_voted = '1' WHERE code = '$user'";
     return $conn->query($sql);
 }
 
@@ -172,6 +217,11 @@ function getUnvoted () {
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 
+function getUnvotedBCH () {
+    global $conn;
+    $sql = "SELECT code, name FROM users WHERE bch_voted = '0'";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
 function Redirect ($url, $permanent = false) {
     header('Location: ' . $url, true, $permanent ? 301 : 302);
     exit();
