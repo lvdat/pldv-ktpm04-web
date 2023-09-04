@@ -45,6 +45,7 @@ $config = array(
         'Không trúng cử'
     ),
     'old_position' => array (
+        'Không',
         'Bí thư',
         'Phó Bí thư',
         'Uỷ viên'

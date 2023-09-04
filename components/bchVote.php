@@ -12,7 +12,7 @@ md-block {
     Dưới đây là thành tích tiêu biểu của các bạn trong danh sách ứng cử Ban chấp hành Chi đoàn KTPM04K46 nhiệm kỳ
     2023-2024.
     Hãy click vào từng tên, xem chi tiết thành tích, sau đó click chọn Đồng ý hoặc Không đồng ý để bình bầu.
-    Có <b class="text-success"><?=$config['statics']['voted']?></b> Đoàn viên đã bình xét!
+    Có <b class="text-success"><?=$config['statics']['bch_voted']?></b> Đoàn viên đã bầu chọn!
 </p>
 <?php 
     $a = getBCHVoteData();
@@ -50,6 +50,11 @@ md-block {
             <div id="panelsStayOpen-collapse<?=$key?>" class="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-heading<?=$key?>">
                 <div class="accordion-body">
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            Chức vụ đương nhiệm: <b><?=$config['old_position'][$value['old_position']]?></b>
+                        </div>
+                    </div>
                     <p><b>Thành tích tiêu biểu năm học 2022-2023</b></p>
                     <div class="card mb-2">
                         <div class="card-body dv_info">
