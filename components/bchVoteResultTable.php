@@ -18,7 +18,8 @@
             <td><?=$userData['name']?></td>
             <td><span
                     class="badge bg-success rounded-pill"><?=$value['upvote'] . '/' . $config['statics']['bch_voted']?>
-                    (<?=round($value['upvote']/$config['statics']['bch_voted']*100, 1)?>%) </span>
+                    (<?=$config['statics']['bch_voted'] ? (round($value['upvote']/($config['statics']['bch_voted'])*100, 1)) : 0 ?>%)
+                </span>
             </td>
             <td><b
                     style="color: <?=$config['bch_vote_color'][$value['status']]?>"><?=$config['bch_vote_status'][$value['status']]?></b>
