@@ -7,7 +7,7 @@
 
             <?php 
                 if($config['isFinalResult'])
-                    include 'components/voteResult.php';
+                    include 'components/bchVoteResult.php';
                 else
                     include 'components/bchVote.php'; 
             ?>
