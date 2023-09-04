@@ -95,7 +95,7 @@ function getVoteData () {
 
 function getBCHVoteData () {
     global $conn;
-    $sql = "SELECT code, info, upvote, downvote, old_position, status FROM dvut";
+    $sql = "SELECT code, info, upvote, downvote, old_position, status FROM vote_bch";
     return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 }
 

@@ -15,25 +15,25 @@ md-block {
     Có <b class="text-success"><?=$config['statics']['voted']?></b> Đoàn viên đã bình xét!
 </p>
 <?php 
-    $a = getVoteData();
+    $a = getBCHVoteData();
     if(isset($_POST['vote'])){
-        if(isVoted()){
+        if(isBCHVoted()){
             echo '<script>alert("Bạn đã bình chọn rồi!");</script>';
         } else {
             for($i = 0; $i < count($a); $i++){
                 $code = $a[$i]['code'];
                 $vote = $_POST[$code];
                 if($vote == 'up') {
-                    upVote($code);
+                    upVoteBCH($code);
                 } else {
-                    downVote($code);
+                    downVoteBCH($code);
                 }
             }
-            setVoted();
+            setVotedBCH();
         }
     }
 ?>
-<?php if(!isVoted()) : ?>
+<?php if(!isBCHVoted()) : ?>
 <form action="/dvut" method="POST" class="mb-3">
     <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
 
@@ -50,32 +50,7 @@ md-block {
             <div id="panelsStayOpen-collapse<?=$key?>" class="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-heading<?=$key?>">
                 <div class="accordion-body">
-                    <p><b>Kết quả học tập</b></p>
-                    <table class="table table-hover table-responsive" id="info_dv">
-                        <thead>
-                            <tr class="table-dark">
-                                <th scope="col" style="width:40%">Điểm</th>
-                                <th scope="col" style="width:20%">HK1</th>
-                                <th scope="col" style="width:20%">HK2</th>
-                                <th scope="col" style="width:20%">Trung bình năm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Điểm trung bình học tập</td>
-                                <td><?=$userData['dtb1']?></td>
-                                <td><?=$userData['dtb2']?></td>
-                                <td><b><?=$userData['dtb']?></b></td>
-                            </tr>
-                            <tr>
-                                <td>Điểm rèn luyện</td>
-                                <td><?=$userData['drl1']?></td>
-                                <td><?=$userData['drl2']?></td>
-                                <td><b><?=$userData['drl']?></b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><b>Thành tích tiêu biểu</b></p>
+                    <p><b>Thành tích tiêu biểu năm học 2022-2023</b></p>
                     <div class="card mb-2">
                         <div class="card-body dv_info">
                             <md-block>
