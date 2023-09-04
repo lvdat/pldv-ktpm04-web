@@ -33,6 +33,7 @@ if(checkLogin()) {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if(checkLogin()): ?>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="main" ? " active": ""?>" href="/"><i
                                 class="fas fa-info-circle"></i> Xếp loại Đoàn viên</a>
@@ -41,16 +42,19 @@ if(checkLogin()) {
                         <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i>
                             Bình xét DVUT</a>
                     </li>
+                    -->
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="votebch" ? " active": ""?>" href="/votebch"><i
                                 class="fas fa-poll"></i>
                             Bầu BCH</a>
                     </li>
                     <?php if(in_array($render['code'], $config['bch'])): ?>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="unvoted" ? " active": ""?>" href="/unvoted"><i
                                 class="fas fa-exclamation"></i> Chưa bình xét DVUT</a>
                     </li>
+                    -->
                     <?php endif ?>
                     <?php endif ?>
                 </ul>
