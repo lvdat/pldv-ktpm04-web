@@ -26,8 +26,10 @@ if ($root == 'error') {
                 require 'views/homePageLogin.php';
             } else if($root == 'dvut') {
                 require 'views/dvutPage.php';
-            } else if($root = 'unvoted') {
+            } else if($root == 'unvoted') {
                 require 'views/unVotedPage.php';
+            } else if($root == 'votebch') {
+                require 'views/bchVote.php';
             }
     }
 }

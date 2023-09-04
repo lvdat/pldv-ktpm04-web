@@ -41,6 +41,11 @@ if(checkLogin()) {
                         <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i>
                             Bình xét DVUT</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link<?=$root=="votebch" ? " active": ""?>" href="/votebch"><i
+                                class="fas fa-poll"></i>
+                            Bầu BCH</a>
+                    </li>
                     <?php if(in_array($render['code'], $config['bch'])): ?>
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="unvoted" ? " active": ""?>" href="/unvoted"><i
