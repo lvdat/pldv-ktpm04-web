@@ -90,7 +90,7 @@ md-block {
 
     <div class="text-center">
         <button type="submit" name="vote" class="btn btn-primary">
-            <i class="fas fa-check"></i> GỬI BÌNH CHỌN
+            <i class="fas fa-check"></i> GỬI PHIẾU BẦU
         </button>
     </div>
 </form>

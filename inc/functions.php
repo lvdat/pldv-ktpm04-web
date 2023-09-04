@@ -189,6 +189,7 @@ function getStatics() {
     $sql7 = "SELECT * FROM users WHERE xeploaichinhthuc = '2'";
     $sql8 = "SELECT * FROM users WHERE xeploaichinhthuc = '3'";
     $sql9 = "SELECT * FROM users WHERE xeploaichinhthuc = '4'";
+    $sql10 = "SELECT * FROM users WHERE bch_voted = '1'";
     $res = array(
         'users' => $conn->query($sql)->num_rows,
         'voted' => $conn->query($sql1)->num_rows,
@@ -196,6 +197,7 @@ function getStatics() {
         'trungbinh' => $conn->query($sql3)->num_rows + $conn->query($sql7)->num_rows,
         'kha' => $conn->query($sql4)->num_rows + $conn->query($sql8)->num_rows,
         'xuatsac' => $conn->query($sql5)->num_rows + $conn->query($sql9)->num_rows,
+        'bch_voted' => $conn->query($sql10)->num_rows
     );
 
     return $res;
