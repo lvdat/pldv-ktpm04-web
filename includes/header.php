@@ -25,8 +25,7 @@ if(checkLogin()) {
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><b><i class="fas fa-university"></i> KTPM04</b> <sup><small>XLDV
-                        2023</small></sup></a>
+            <a class="navbar-brand" href="/"><b><i class="fas fa-university"></i> KTPM04</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
