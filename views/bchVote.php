@@ -29,3 +29,6 @@
 <div class="col-md-4">
     <?php require_once 'components/siteBar.php'; ?>
 </div>
+<script>
+document.title = 'BẦU CHỌN BCH NHIỆM KỲ 2023 - 2024';
+</script>
