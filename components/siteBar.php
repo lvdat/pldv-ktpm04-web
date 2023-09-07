@@ -82,3 +82,11 @@
     </div>
 </div>
 <?php endif ?>
+<div class="card credit__info text-center">
+    <div class="card-body text-muted small">
+        Hosted by <a href="<?=$_ENV['HOSTING_PROVIDED_LINK']?>" target="_blank"><?=$_ENV['HOSTING_PROVIDED_NAME']?></a>
+        | <i class="fas fa-code-commit"></i> <?=getCurrentCommit(8)?> | <a
+            href="https://github.com/lvdat/pldv-ktpm04-web" target="_blank"><i class="fab fa-github"></i> Source
+            code</a>
+    </div>
+</div>
