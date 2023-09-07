@@ -236,13 +236,13 @@ function updateHash ($code) {
     return $conn->query($sql);
 }
 
-function getCurrentCommit ($len = 6) {
+function getCurrentCommit ($len = null) {
     $commitFilePath = $_SERVER['DOCUMENT_ROOT'] . '/' . '.' . 'git/refs/heads/master';
     if (file_exists($commitFilePath)) {
         $f = fopen($commitFilePath, 'r');
         $commitHash = fgets($f);
         fclose($f);
-        return substr($commitHash, 0, $len);
+        return $len ? substr($commitHash, 0, $len) : $commitHash;
     } else {
         return 'undefined';
     }
