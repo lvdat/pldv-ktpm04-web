@@ -15,6 +15,6 @@ body {
     border: 1px solid #000!important;
 }
 
-.card.credit__info ~ a {
+.card-body.credit__info a {
     text-decoration: none!important;
 }
