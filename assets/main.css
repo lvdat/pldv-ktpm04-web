@@ -14,3 +14,7 @@ body {
 #indo_dv {
     border: 1px solid #000!important;
 }
+
+.card-body.credit__info a {
+    text-decoration: none!important;
+}

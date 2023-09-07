@@ -9,6 +9,7 @@ RewriteRule ^error/([0-9]+)$ /?page=error&code=$1
 RewriteRule ^auth_error$ /?page=error&code=403
 RewriteRule ^dvut$ /?page=dvut
 RewriteRule ^unvoted$ /?page=unvoted
+RewriteRule ^unvotedBCH$ /?page=unvotedBCH
 RewriteRule ^votebch$ /?page=votebch
 RewriteRule ^login/([a-zA-Z0-9]+)$ /login.php?hash=$1
 RewriteRule ^logout$ /logout.php

@@ -58,5 +58,13 @@ $config = array(
     ),
     'google_client_id' => $_ENV['GOOGLE_CLIENT_ID'],
     'google_client_secret' => $_ENV['GOOGLE_CLIENT_SECRET'],
-    'google_redirect_url' => $_ENV['GOOGLE_REDIRECT_URI']
+    'google_redirect_url' => $_ENV['GOOGLE_REDIRECT_URI'],
+    'hide' => array (
+        'statistics' => $_ENV['HIDE_STATISTICS'] === 'true',
+        'contact' => $_ENV['HIDE_CONTACT_INFO'] === 'true',
+        'pldv' => $_ENV['HIDE_PLDV_LINK'] === 'true',
+        'dvut' => $_ENV['HIDE_DVUT_LINK'] === 'true',
+        'bchvote' => $_ENV['HIDE_BCHVOTE_LINK'] === 'true',
+        'arisu_gif' => $_ENV['ARISU_GIF'] === 'false',
+    )
 );
