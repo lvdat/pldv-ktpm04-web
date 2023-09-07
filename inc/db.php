@@ -2,7 +2,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\Dotenv\Dotenv;
 $dotenv = new Dotenv();
-$dotenv->load($_SERVER['DOCUMENT_ROOT'] . '/.env');
+$dotenv->load(__DIR__ . '/../.env');
 
 $db_host = $_ENV['DB_HOST'];
 $db_name = $_ENV['DB_NAME'];
