@@ -1,5 +1,5 @@
 <?php 
-require $_SERVER['DOCUMENT_ROOT'] . '/inc/load.php';
+require __DIR__ . '/../inc/load.php';
 if(checkLogin()) {
     $render = getInfoCurrentUser();
 }
