@@ -13,26 +13,26 @@ if(isset($_GET['page'])) {
     }
 }
 
-require 'includes/header.php';
+require __DIR__ . '/includes/header.php';
 
 if ($root == 'error') {
     $error_code = isset($_GET['code']) ? $_GET['code'] : '';
-    require './views/error.php';
+    require __DIR__ . '/views/error.php';
 } else {
     if(!checkLogin()) {
-        require './views/pageNotLogin.php';
+        require __DIR__ . '/views/pageNotLogin.php';
         } else {
             if($root == 'main') {
                 // require 'views/bchVote.php';
                 Redirect ('/votebch');
             } else if($root == 'dvut') {
-                require './views/dvutPage.php';
+                require __DIR__ . '/views/dvutPage.php';
             } else if($root == 'unvoted') {
-                require './views/unVotedPage.php';
+                require __DIR__ . '/views/unVotedPage.php';
             } else if($root == 'unvotedBCH') {
-                require './views/unVotedBCHPage.php';
+                require __DIR__ . '/views/unVotedBCHPage.php';
             } else if($root == 'votebch') {
-                require './views/bchVote.php';
+                require __DIR__ . '/views/bchVote.php';
             }
     }
 }
