@@ -1,6 +1,24 @@
+<?php if (!$config['hide']['arisu_gif']) : ?>
+<div class="card mb-2">
+    <div class="card-body">
+        <div class="card mb-2">
+            <div class="card-body">
+                <b>Hạn chót bầu cử BCH:</b> 20/09/2023
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="/assets/arisu.gif" style="max-width: 50%" />
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif ?>
+<?php if (!$config['hide']['statistics']) : ?>
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fas fa-chart-line"></i> Thống kê <?php if(!$config['isFinalResult']): ?><b class="text-danger">(Chưa chính thức)</b><?php endif ?>
+        <i class="fas fa-chart-line"></i> Thống kê <?php if(!$config['isFinalResult']): ?><b class="text-danger">(Chưa
+            chính thức)</b><?php endif ?>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -37,6 +55,8 @@
         </li>
     </ul>
 </div>
+<?php endif ?>
+<?php if (!$config['hide']['contact']) : ?>
 <div class="card">
     <div class="card-header">
         <i class="fas fa-phone-volume"></i> Liên hệ
@@ -59,5 +79,14 @@
             </div>
         </div>
 
+    </div>
+</div>
+<?php endif ?>
+<div class="card text-center">
+    <div class="card-body text-muted small credit__info">
+        Hosted by <a href="<?=$_ENV['HOSTING_PROVIDED_LINK']?>" target="_blank"><?=$_ENV['HOSTING_PROVIDED_NAME']?></a>
+        | <i class="fas fa-code-commit"></i> <?=getCurrentCommit(8)?> | <a
+            href="https://github.com/lvdat/pldv-ktpm04-web" target="_blank"><i class="fab fa-github"></i> Source
+            code</a>
     </div>
 </div>

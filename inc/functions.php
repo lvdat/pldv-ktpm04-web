@@ -235,3 +235,15 @@ function updateHash ($code) {
     $sql = "UPDATE users SET hash = '$newHash' WHERE code = '$code'";
     return $conn->query($sql);
 }
+
+function getCurrentCommit ($len = 6) {
+    $commitFilePath = $_SERVER['DOCUMENT_ROOT'] . '/' . '.' . 'git/refs/heads/master';
+    if (file_exists($commitFilePath)) {
+        $f = fopen($commitFilePath, 'r');
+        $commitHash = fgets($f);
+        fclose($f);
+        return substr($commitHash, 0, $len);
+    } else {
+        return 'undefined';
+    }
+}

@@ -14,6 +14,10 @@ md-block {
     Hãy click vào từng tên, xem chi tiết thành tích, sau đó click chọn Đồng ý hoặc Không đồng ý để bình bầu.
     Có <b class="text-success"><?=$config['statics']['bch_voted']?></b> Đoàn viên đã bầu chọn!
 </p>
+<p>
+    Có <b>6</b> đồng chí ứng cử, vậy nên sẽ dựa vào số lượng phiếu bầu để bầu ra <b>5</b> đồng chí trúng cử BCH Chi đoàn
+    cho nhiệm kỳ 2023-2024.
+</p>
 <?php 
     $a = getBCHVoteData();
     if(isset($_POST['vote'])){

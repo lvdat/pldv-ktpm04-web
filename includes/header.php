@@ -18,7 +18,7 @@ if(checkLogin()) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
-    <script src="https://kit.fontawesome.com/805c912558.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 
@@ -33,28 +33,38 @@ if(checkLogin()) {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if(checkLogin()): ?>
-                    <!--
+                    <?php if(!$config['hide']['pldv']) : ?>
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="main" ? " active": ""?>" href="/"><i
                                 class="fas fa-info-circle"></i> Xếp loại Đoàn viên</a>
                     </li>
+                    <?php endif ?>
+                    <?php if(!$config['hide']['dvut']) : ?>
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="dvut" ? " active": ""?>" href="/dvut"><i class="fas fa-poll"></i>
                             Bình xét DVUT</a>
                     </li>
-                    -->
+                    <?php endif ?>
+                    <?php if(!$config['hide']['bchvote']) : ?>
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="votebch" ? " active": ""?>" href="/votebch"><i
                                 class="fas fa-poll"></i>
                             Bầu BCH</a>
                     </li>
+                    <?php endif ?>
                     <?php if(in_array($render['code'], $config['bch'])): ?>
-                    <!--
+                    <?php if(!$config['hide']['dvut']) : ?>
                     <li class="nav-item">
                         <a class="nav-link<?=$root=="unvoted" ? " active": ""?>" href="/unvoted"><i
                                 class="fas fa-exclamation"></i> Chưa bình xét DVUT</a>
                     </li>
-                    -->
+                    <?php endif ?>
+                    <?php if(!$config['hide']['bchvote']) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link<?=$root=="unvotedBCH" ? " active": ""?>" href="/unvotedBCH"><i
+                                class="fas fa-exclamation"></i> Chưa bầu chọn BCH</a>
+                    </li>
+                    <?php endif ?>
                     <?php endif ?>
                     <?php endif ?>
                 </ul>
