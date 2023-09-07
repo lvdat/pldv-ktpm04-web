@@ -59,6 +59,12 @@ if(checkLogin()) {
                                 class="fas fa-exclamation"></i> Chưa bình xét DVUT</a>
                     </li>
                     <?php endif ?>
+                    <?php if(!$config['hide']['bchvote']) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link<?=$root=="unvotedBCH" ? " active": ""?>" href="/unvotedBCH"><i
+                                class="fas fa-exclamation"></i> Chưa bầu chọn BCH</a>
+                    </li>
+                    <?php endif ?>
                     <?php endif ?>
                     <?php endif ?>
                 </ul>
