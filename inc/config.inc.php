@@ -60,7 +60,7 @@ $config = array(
     'google_client_secret' => $_ENV['GOOGLE_CLIENT_SECRET'],
     'google_redirect_url' => $_ENV['GOOGLE_REDIRECT_URI'],
     'hide' => array (
-        'sitebar' => $_ENV['HIDE_SITEBAR'] === 'true',
+        'statistics' => $_ENV['HIDE_STATISTICS'] === 'true',
         'contact' => $_ENV['HIDE_CONTACT_INFO'] === 'true',
         'pldv' => $_ENV['HIDE_PLDV_LINK'] === 'true',
         'dvut' => $_ENV['HIDE_DVUT_LINK'] === 'true',

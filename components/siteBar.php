@@ -14,7 +14,7 @@
     </div>
 </div>
 <?php endif ?>
-<?php if (!$config['hide']['sitebar']) : ?>
+<?php if (!$config['hide']['statistics']) : ?>
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-chart-line"></i> Thống kê <?php if(!$config['isFinalResult']): ?><b class="text-danger">(Chưa
