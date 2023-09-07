@@ -29,6 +29,8 @@ if ($root == 'error') {
                 require 'views/dvutPage.php';
             } else if($root == 'unvoted') {
                 require 'views/unVotedPage.php';
+            } else if($root == 'unvotedBCH') {
+                require 'views/unVotedBCHPage.php';
             } else if($root == 'votebch') {
                 require 'views/bchVote.php';
             }
